@@ -14,6 +14,7 @@ import ForgotPassword from '../pages/ForgotPassword';
 import ResetPassword from '../pages/ResetPassword';
 import Payment from '../pages/Payment'; // Import Payment page
 import OrderSuccess from '../pages/OrderSuccess';
+import VerifyEmail from '../pages/VerifyEmail';
 
 const router = createBrowserRouter([
     {
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
             {
                 path: "order-success",
                 element: <OrderSuccess/>
+            },
+            {
+                path : "verify-email/:token",
+                element : <VerifyEmail/>
+
             },
             {
                 path: "search",

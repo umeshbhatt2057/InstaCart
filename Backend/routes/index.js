@@ -27,6 +27,7 @@ const forgotPasswordController = require('../controller/user/forgotPassword')
 const resetPasswordController = require('../controller/user/resetPassword')
 const { createOrder } = require('../controller/user/orderController')
 const clearCart = require('../controller/user/clearCart')
+const verifyEmailController = require('../controller/user/verifyEmailController')
 
 
 
@@ -72,17 +73,7 @@ router.post('/create-order', authToken, createOrder);  // Protect the route with
 
 router.post('/clear', authToken, clearCart);
 
+// Email Verification
+router.get('/verify-email/:token', verifyEmailController);
 
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = router
+module.exports = router;

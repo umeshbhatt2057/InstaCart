@@ -98,8 +98,12 @@ const SummaryApi = {
         url: `${backendDomin}/api/clear`,
         method: 'post'
     },
-   
-   
+    
+     // Email Verification
+     verifyEmail: {
+        url: `${backendDomin}/api/verify-email/:token`, // Ensure this endpoint exists in your backend
+        method: 'get' // Assuming this will be a GET request
+    },
 }
 
 export default SummaryApi;

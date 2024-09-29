@@ -1,31 +1,49 @@
 const mongoose = require('mongoose');
 
+// Define the schema for user
 const userSchema = new mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true,  // Make name required
+    },
     email: {
         type: String,
         unique: true,
-        required: true
+        required: true,
+        lowercase: true,  // Store emails in lowercase
+        trim: true,       // Remove extra spaces
     },
-    password: String,
-    profilePic: String,
-    role: String,
-    resetPasswordToken: String,        // Field to store the reset token
-    resetPasswordExpires: Date,        // Field to store the token expiration date
-
-    // New fields to store user's shipping information
-    shippingAddress: {
-        province: String,
-        district: String,
-        municipality: String,
-        wardNo: String,
-        village: String,
-        mobileNumber: String,
+    password: {
+        type: String,
+        required: true,  // Ensure password is required
+    },
+    profilePic: {
+        type: String,
+         
+    },
+    role: {
+        type: String,
+        enum: ['ADMIN', 'SUPERADMIN', 'GENERAL'], // Ensure these match your intended roles
+        default: 'GENERAL' // or any default role you wish
+    },
+    verificationToken: { // Added verificationToken field
+        type: String,
+    },
+    isVerified: { // Added isVerified field
+        type: Boolean,
+        default: false, // Set to false by default
+    },
+    resetPasswordToken: {
+        type: String,
+    },
+    resetPasswordExpires: {
+        type: Date,
     },
 }, {
-    timestamps: true
+    timestamps: true // Automatically create createdAt and updatedAt fields
 });
 
-const userModel = mongoose.model("user", userSchema);
+// Create the user model from the schema
+const userModel = mongoose.model("User", userSchema);
 
 module.exports = userModel;
