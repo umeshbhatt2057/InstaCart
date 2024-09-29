@@ -1,17 +1,26 @@
 const userModel = require("../../models/userModel");
 const bcrypt = require('bcryptjs');
-const sendEmail = require('../../helpers/sendEmail');  // Import sendEmail function
-const crypto = require('crypto'); // Import crypto for token generation
+const sendEmail = require('../../helpers/sendEmail'); 
+const crypto = require('crypto'); 
 
 async function userSignUpController(req, res) {
     try {
-        const { email, password, name, profilePic } = req.body; // Added profilePic in destructuring
+        const { email, password, name, profilePic } = req.body;
 
         // Validate required fields
         if (!email || !password || !name) {
             return res.status(400).json({
                 success: false,
                 message: "Please provide all required fields"
+            });
+        }
+
+        // Check password length and complexity
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/; // At least 6 characters, one uppercase, one numeric
+        if (!passwordRegex.test(password)) {
+            return res.status(400).json({
+                success: false,
+                message: "Password must be at least 6 characters long and contain at least one uppercase letter and one numeric value"
             });
         }
 
@@ -25,7 +34,7 @@ async function userSignUpController(req, res) {
         }
 
         // Hash the password
-        const salt = await bcrypt.genSalt(10);  // Use asynchronous method
+        const salt = await bcrypt.genSalt(10);
         const hashPassword = await bcrypt.hash(password, salt);
 
         // Generate verification token
@@ -37,9 +46,9 @@ async function userSignUpController(req, res) {
             name,
             password: hashPassword,
             role: "GENERAL",
-            isVerified: false,  // Add isVerified field
-            verificationToken,  // Save verification token
-            profilePic,  // Add profilePic field to payload
+            isVerified: false,
+            verificationToken,
+            profilePic,
         };
 
         // Save user in the database
@@ -52,12 +61,12 @@ async function userSignUpController(req, res) {
         const text = `Please verify your email by clicking the link: ${verificationLink}`;
         const html = `<p>Please verify your email by clicking the link: <a href="${verificationLink}">Verify Email</a></p>`;
 
-        await sendEmail(email, subject, text, html); // Send verification email
+        await sendEmail(email, subject, text, html);
 
         // Send success response
         return res.status(201).json({
             success: true,
-            message: "User created successfully! ",
+            message: "User created successfully! Please verify your email."
         });
 
     } catch (err) {

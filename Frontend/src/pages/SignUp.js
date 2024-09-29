@@ -16,7 +16,7 @@ const SignUp = () => {
     confirmPassword: "",
     profilePic: "",
   });
-  const [loading, setLoading] = useState(false); // Loading state
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleOnChange = (e) => {
@@ -41,6 +41,13 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate password
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/; // At least 6 characters, one uppercase, one numeric
+    if (!passwordRegex.test(data.password)) {
+      toast.error("Password must be at least 6 characters long and contain at least one uppercase letter and one numeric value");
+      return;
+    }
 
     if (data.password !== data.confirmPassword) {
       toast.error("Passwords do not match");
