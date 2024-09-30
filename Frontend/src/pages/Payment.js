@@ -1,9 +1,11 @@
-import React, { useState,} from 'react';
+import React, { useState } from 'react';
 import SummaryApi from '../common';
 import { useLocation, useNavigate } from 'react-router-dom';
 import displayNPRCurrency from '../helpers/displayCurrency';
 import { getDeliveryCharge } from '../helpers/deliverycharge';
 import { getDistrictsByProvince } from '../helpers/provinceDistricts';
+import esewaIcon from '../assest/esewa_icon (1).png'; // Assuming you have eSewa icon
+import khaltiIcon from '../assest/khalti_icon.png'; // Assuming you have Khalti icon
 
 const Payment = () => {
     const location = useLocation();
@@ -208,14 +210,40 @@ const Payment = () => {
                         <p className='text-lg font-semibold'>Total Amount: {displayNPRCurrency(totalAmount || 0)}</p>
                         <p className='text-lg font-semibold'>Final Amount: {displayNPRCurrency((totalAmount || 0) + deliveryCharge)}</p>
                     </div>
-                    <button
-                        type='button'
-                        onClick={handlePlaceOrder}
-                        className='mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600'
-                        disabled={loading}
-                    >
-                        {loading ? 'Placing Order...' : 'Place Order'}
-                    </button>
+
+                    {/* Payment Methods */}
+                    <div className="mt-4">
+                        <p className='text-lg font-semibold'>Pay via:</p>
+                    </div>
+                    <div className="mt-4 space-y-3">
+                        <button
+                            type='button'
+                            className='w-full bg-gray-500 text-white px-4 py-2 rounded flex items-center justify-center cursor-not-allowed'
+                            disabled
+                        >
+                            <img src={khaltiIcon} alt="Khalti" className="w-6 h-6 mr-2" /> Khalti (Unavailable)
+                        </button>
+
+                        <button
+                            type='button'
+                            className='w-full bg-gray-500 text-white px-4 py-2 rounded flex items-center justify-center cursor-not-allowed'
+                            disabled
+                        >
+                            <img src={esewaIcon} alt="eSewa" className="w-6 h-6 mr-2" /> eSewa (Unavailable)
+                        </button>
+
+                        <button
+                            type='button'
+                            className='w-full bg-green-500 text-white px-4 py-2 rounded flex items-center justify-center'
+                            onClick={handlePlaceOrder}
+                            disabled={loading}
+                        >
+                            Cash on Delivery (COD)
+                        </button>
+                    </div>
+
+                    {/* Loading spinner */}
+                    {loading && <p>Processing your order...</p>}
                 </form>
             </div>
         </div>
