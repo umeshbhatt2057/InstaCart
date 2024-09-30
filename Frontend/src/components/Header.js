@@ -67,6 +67,14 @@ const Header = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Handle key down event
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent default form submission behavior
+      handleSearch(); // Trigger search on Enter key
+    }
+  };
+
   return (
     <header className='h-16 shadow-md bg-white fixed w-full z-40'>
       <div className='h-full container mx-auto flex items-center px-4 justify-between'>
@@ -88,6 +96,7 @@ const Header = () => {
             className='w-full outline-none' 
             value={search} 
             onChange={(e) => setSearch(e.target.value)}  // Update search value only
+            onKeyDown={handleKeyDown} // Trigger search on Enter key
           />
           <div 
             className='text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out'
