@@ -68,11 +68,7 @@ const router = createBrowserRouter([
                 element : <VerifyEmail/>
 
             },
-            {
-                path: "order",
-                element: <OrderPage/>
-
-            },
+            
             {
                 path: "faq",
                 element: <Faq/>
