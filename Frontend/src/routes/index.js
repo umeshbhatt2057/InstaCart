@@ -15,6 +15,8 @@ import ResetPassword from '../pages/ResetPassword';
 import Payment from '../pages/Payment'; // Import Payment page
 import OrderSuccess from '../pages/OrderSuccess';
 import VerifyEmail from '../pages/VerifyEmail';
+import OrderPage from '../pages/OrderPage';
+import Faq from '../pages/FAQ';
 
 const router = createBrowserRouter([
     {
@@ -67,13 +69,18 @@ const router = createBrowserRouter([
 
             },
             {
-                path: "search",
-                element: <SearchProduct />
+                path: "order",
+                element: <OrderPage/>
+
             },
             {
                 path: "faq",
                 element: <Faq/>
 
+            },
+            {
+                path: "search",
+                element: <SearchProduct />
             },
             {
                 path: "admin-panel",
