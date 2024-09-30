@@ -117,6 +117,19 @@ const Payment = () => {
         }
     };
 
+    // Handle key down event to navigate to next input
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const formElements = Array.from(e.target.form.elements);
+            const index = formElements.indexOf(e.target);
+            const nextElement = formElements[index + 1];
+            if (nextElement) {
+                nextElement.focus();
+            }
+        }
+    };
+
     return (
         <div className='container mx-auto p-4 max-w-lg'>
             <h2 className='text-2xl font-semibold mb-4'>Payment</h2>
@@ -164,6 +177,7 @@ const Payment = () => {
                             name='municipality'
                             value={shippingAddress.municipality}
                             onChange={handleChange}
+                            onKeyDown={handleKeyDown} // Added for key navigation
                             className='border rounded px-2 py-1 w-full placeholder-gray-500 text-gray-700 focus:outline-none focus:ring focus:ring-green-300'
                             placeholder='Enter Municipality'
                             required
@@ -176,6 +190,7 @@ const Payment = () => {
                             name='wardNo'
                             value={shippingAddress.wardNo}
                             onChange={handleChange}
+                            onKeyDown={handleKeyDown} // Added for key navigation
                             className='border rounded px-2 py-1 w-full placeholder-gray-500 text-gray-700 focus:outline-none focus:ring focus:ring-green-300'
                             placeholder='Enter Ward No'
                             required
@@ -188,6 +203,7 @@ const Payment = () => {
                             name='village'
                             value={shippingAddress.village}
                             onChange={handleChange}
+                            onKeyDown={handleKeyDown} // Added for key navigation
                             className='border rounded px-2 py-1 w-full placeholder-gray-500 text-gray-700 focus:outline-none focus:ring focus:ring-green-300'
                             placeholder='Enter Village'
                             required
@@ -200,6 +216,7 @@ const Payment = () => {
                             name='mobileNumber'
                             value={shippingAddress.mobileNumber}
                             onChange={handleChange}
+                            onKeyDown={handleKeyDown} // Added for key navigation
                             className='border rounded px-2 py-1 w-full placeholder-gray-500 text-gray-700 focus:outline-none focus:ring focus:ring-green-300'
                             placeholder='Enter Mobile Number'
                             required
