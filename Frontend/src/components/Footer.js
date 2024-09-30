@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 // Import images from assets
 import UmeshPhoto from '../assest/Umesh.jpg';
@@ -85,6 +86,13 @@ const Footer = () => {
           <p className='text-gray-800 font-semibold'>
             Email: <a href='mailto:instacart143@gmail.com' className='text-blue-600 hover:underline'>instacart143@gmail.com</a>
           </p>
+        </div>
+
+        {/* FAQ Link */}
+        <div className='text-center mt-8'>
+          <Link to="/faq" className='text-blue-600 hover:underline'>
+            Frequently Asked Questions
+          </Link>
         </div>
 
         {/* Footer Title */}
