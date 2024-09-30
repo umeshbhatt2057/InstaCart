@@ -21,7 +21,6 @@ const Footer = () => {
       role: "Frontend Developer"
     },
     {
-     
       name: "Umesh Bhatt",
       photo: UmeshPhoto,
       role: "Team Lead"
@@ -49,16 +48,43 @@ const Footer = () => {
         
         <div className='grid grid-cols-2 md:grid-cols-5 gap-4'>
           {teamMembers.map((member, index) => (
-            <div key={index} className='text-center'>
+            <div 
+              key={index} 
+              className='text-center'
+              style={{
+                transform: member.role === "Team Lead" ? 'scale(1.1)' : 'scale(1)',
+              }}
+            >
               <img 
                 src={member.photo} 
                 alt={member.name} 
-                className='w-24 h-24 mx-auto rounded-full object-cover'
+                className={`mx-auto rounded-full object-cover 
+                  ${member.role === "Team Lead" ? 'w-28 h-28' : 'w-24 h-24'}`}
               />
-              <p className='mt-2 font-semibold'>{member.name}</p>
-              <p className='text-sm text-gray-600'>{member.role}</p>
+              <p className={`mt-2 font-semibold 
+                ${member.role === "Team Lead" ? 'text-lg' : 'text-base'}`}>
+                {member.name}
+              </p>
+              <p className={`text-sm text-gray-600 
+                ${member.role === "Team Lead" ? 'font-bold' : ''}`}>
+                {member.role}
+              </p>
             </div>
           ))}
+        </div>
+
+        {/* Customer Support Section */}
+        <div className='text-center mt-8 mb-8'>
+          <h3 className='text-lg font-bold text-black'>Customer Support</h3>
+          <p className='text-gray-700'>
+            For any inquiries, feel free to contact us at:
+          </p>
+          <p className='text-gray-800 font-semibold'>
+            Phone: +9779865941673, +9779806469215
+          </p>
+          <p className='text-gray-800 font-semibold'>
+            Email: <a href='mailto:instacart143@gmail.com' className='text-blue-600 hover:underline'>instacart143@gmail.com</a>
+          </p>
         </div>
 
         {/* Footer Title */}
