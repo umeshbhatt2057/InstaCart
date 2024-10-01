@@ -14,7 +14,7 @@ const Footer = () => {
     {
       name: "Dinesh Bhatt",
       photo: DineshPhoto,
-      role: "QA Engineer/Frontend "
+      role: "QA Engineer/Frontend Developer"
     },
     {
       name: "Neelam Dhami",
@@ -24,7 +24,7 @@ const Footer = () => {
     {
       name: "Umesh Bhatt",
       photo: UmeshPhoto,
-      role: "Team Lead,Backend Developer"
+      role: "Team Lead, Backend Developer"
     },
     {
       name: "Shreya Joshi",
@@ -53,21 +53,21 @@ const Footer = () => {
               key={index} 
               className='text-center'
               style={{
-                transform: member.role === "Team Lead" ? 'scale(1.1)' : 'scale(1)',
+                transform: member.role.includes("Team Lead") ? 'scale(1.1)' : 'scale(1)',
               }}
             >
               <img 
                 src={member.photo} 
                 alt={member.name} 
                 className={`mx-auto rounded-full object-cover 
-                  ${member.role === "Team Lead" ? 'w-28 h-28' : 'w-24 h-24'}`}
+                  ${member.role.includes("Team Lead") ? 'w-28 h-28' : 'w-24 h-24'}`}
               />
               <p className={`mt-2 font-semibold 
-                ${member.role === "Team Lead" ? 'text-lg' : 'text-base'}`}>
+                ${member.role.includes("Team Lead") ? 'text-lg' : 'text-base'}`}>
                 {member.name}
               </p>
               <p className={`text-sm text-gray-600 
-                ${member.role === "Team Lead" ? 'font-bold' : ''}`}>
+                ${member.role.includes("Team Lead") ? 'font-bold' : ''}`}>
                 {member.role}
               </p>
             </div>
