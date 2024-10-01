@@ -66,7 +66,7 @@ async function userSignUpController(req, res) {
         // Send success response
         return res.status(201).json({
             success: true,
-            message: "User created successfully! Please verify your email."
+            message: "User created successfully! "
         });
 
     } catch (err) {
