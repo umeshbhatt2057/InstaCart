@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import loginIcons from '../assest/signin.gif';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
@@ -18,6 +18,12 @@ const SignUp = () => {
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  // Refs to move between input fields with "Enter"
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const confirmPasswordRef = useRef(null);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -41,6 +47,12 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate if profilePic is provided
+    if (!data.profilePic) {
+      toast.error("Profile picture is required");
+      return;
+    }
 
     // Validate password
     const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/; // At least 6 characters, one uppercase, one numeric
@@ -80,6 +92,14 @@ const SignUp = () => {
     }
   };
 
+  // Handle Enter key for moving to next input
+  const handleKeyPress = (e, ref) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      ref.current?.focus();
+    }
+  };
+
   return (
     <section id='signup'>
       <div className='mx-auto container p-4'>
@@ -106,9 +126,11 @@ const SignUp = () => {
                   name='name'
                   value={data.name}
                   onChange={handleOnChange}
+                  ref={nameRef}
                   required
                   className='w-full h-full outline-none bg-transparent'
                   aria-label="Name"
+                  onKeyPress={(e) => handleKeyPress(e, emailRef)}
                 />
               </div>
             </div>
@@ -121,9 +143,11 @@ const SignUp = () => {
                   name='email'
                   value={data.email}
                   onChange={handleOnChange}
+                  ref={emailRef}
                   required
                   className='w-full h-full outline-none bg-transparent'
                   aria-label="Email"
+                  onKeyPress={(e) => handleKeyPress(e, passwordRef)}
                 />
               </div>
             </div>
@@ -137,12 +161,14 @@ const SignUp = () => {
                   value={data.password}
                   name='password'
                   onChange={handleOnChange}
+                  ref={passwordRef}
                   required
                   className='w-full h-full outline-none bg-transparent'
                   aria-label="Password"
+                  onKeyPress={(e) => handleKeyPress(e, confirmPasswordRef)}
                 />
-                <div className='cursor-pointer text-xl' onClick={() => setShowPassword((prev) => !prev)}>
-                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                <div className='cursor-pointer text-xl' onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? <FaEye /> : <FaEyeSlash />}
                 </div>
               </div>
             </div>
@@ -152,30 +178,33 @@ const SignUp = () => {
               <div className='bg-slate-100 p-2 flex'>
                 <input
                   type={showConfirmPassword ? "text" : "password"}
-                  placeholder='Enter confirm password'
-                  value={data.confirmPassword}
+                  placeholder='Confirm password'
                   name='confirmPassword'
+                  value={data.confirmPassword}
                   onChange={handleOnChange}
+                  ref={confirmPasswordRef}
                   required
                   className='w-full h-full outline-none bg-transparent'
-                  aria-label="Confirm Password"
+                  aria-label="Confirm password"
                 />
-                <div className='cursor-pointer text-xl' onClick={() => setShowConfirmPassword((prev) => !prev)}>
-                  {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                <div className='cursor-pointer text-xl' onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+                  {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
                 </div>
               </div>
             </div>
 
             <button
-              type="submit"
+              type='submit'
               className='bg-red-600 hover:bg-red-700 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 transition-all mx-auto block mt-6'
-              disabled={loading} // Disable button while loading
+              disabled={loading}
             >
-              {loading ? 'Signing Up...' : 'Sign Up'}
+              {loading ? "Signing Up..." : "Sign Up"}
             </button>
           </form>
 
-          <p className='my-5'>Already have an account? <Link to={"/login"} className='text-red-600 hover:text-red-700 hover:underline'>Login</Link></p>
+          <p className='text-center text-xs mt-5'>
+            Already have an account? <Link to="/login" className='text-red-600 hover:underline'>Login</Link>
+          </p>
         </div>
       </div>
     </section>

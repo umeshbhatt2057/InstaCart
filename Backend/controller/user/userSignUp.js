@@ -1,17 +1,17 @@
 const userModel = require("../../models/userModel");
 const bcrypt = require('bcryptjs');
-const sendEmail = require('../../helpers/sendEmail'); 
-const crypto = require('crypto'); 
+const sendEmail = require('../../helpers/sendEmail');
+const crypto = require('crypto');
 
 async function userSignUpController(req, res) {
     try {
         const { email, password, name, profilePic } = req.body;
 
-        // Validate required fields
-        if (!email || !password || !name) {
+        // Validate required fields, including profilePic
+        if (!email || !password || !name || !profilePic) {
             return res.status(400).json({
                 success: false,
-                message: "Please provide all required fields"
+                message: "Please provide all required fields including a profile picture"
             });
         }
 
