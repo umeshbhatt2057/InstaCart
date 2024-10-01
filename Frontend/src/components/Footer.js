@@ -14,7 +14,7 @@ const Footer = () => {
     {
       name: "Dinesh Bhatt",
       photo: DineshPhoto,
-      role: "Tech Lead"
+      role: "QA Engineer/Frontend "
     },
     {
       name: "Neelam Dhami",
@@ -24,7 +24,7 @@ const Footer = () => {
     {
       name: "Umesh Bhatt",
       photo: UmeshPhoto,
-      role: "Team Lead"
+      role: "Team Lead,Backend Developer"
     },
     {
       name: "Shreya Joshi",
