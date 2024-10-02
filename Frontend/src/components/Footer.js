@@ -14,7 +14,7 @@ const Footer = () => {
     {
       name: "Dinesh Bhatt",
       photo: DineshPhoto,
-      role: "QA Engineer/Frontend Developer"
+      role: "QA Engineer"
     },
     {
       name: "Neelam Dhami",
@@ -24,7 +24,7 @@ const Footer = () => {
     {
       name: "Umesh Bhatt",
       photo: UmeshPhoto,
-      role: "Team Lead, Backend Developer"
+      role: "Team Lead, Full Stack Developer"
     },
     {
       name: "Shreya Joshi",
@@ -60,14 +60,14 @@ const Footer = () => {
                 src={member.photo} 
                 alt={member.name} 
                 className={`mx-auto rounded-full object-cover 
-                  ${member.role.includes("Team Lead") ? 'w-28 h-28' : 'w-24 h-24'}`}
+                  ${member.role.includes("Team Lead") ? 'w-40 h-40' : 'w-32 h-32'}`}  // Increased size for Team Lead
               />
               <p className={`mt-2 font-semibold 
                 ${member.role.includes("Team Lead") ? 'text-lg' : 'text-base'}`}>
                 {member.name}
               </p>
               <p className={`text-sm text-gray-600 
-                ${member.role.includes("Team Lead") ? 'font-bold' : ''}`}>
+                ${member.role.includes("Team Lead") ? 'font-bold text-blue-600 underline' : ''}`}> {/* Styled Team Lead role */}
                 {member.role}
               </p>
             </div>
