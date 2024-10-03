@@ -105,8 +105,19 @@ const Header = () => {
             <GrSearch />
           </div>
         </div>
+        <div>
+            <button 
+                className='px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700'
+                onClick={handleScrollToTop}
+            >
+                Home
+            </button>
+        </div>
 
         <div className='flex items-center gap-7'>
+
+       
+
           <div className='relative flex justify-center' ref={menuRef}>
             {user?._id && (
               <div className='text-3xl cursor-pointer relative flex justify-center' onClick={() => setMenuDisplay(prev => !prev)}>
