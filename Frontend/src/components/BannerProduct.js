@@ -44,7 +44,7 @@ const BannerProduct = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             nextImage()
-        }, 6000)
+        }, 10000)
 
         return () => clearInterval(interval)
     }, [currentImage, nextImage])

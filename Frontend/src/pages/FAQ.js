@@ -25,6 +25,26 @@ const Faq = () => {
     {
       question: "How can I contact customer support?",
       answer: "You can reach us via phone at +9779865941673 or email at instacart143@gmail.com."
+    },
+    {
+      question: "How long does delivery take?",
+      answer: "Delivery typically takes 3-5 business days depending on your location."
+    },
+    {
+      question: "Do you offer international shipping?",
+      answer: "Currently, we only offer shipping within Nepal. We are working on expanding our services internationally."
+    },
+    {
+      question: "Can I track my order?",
+      answer: "Yes, once your order has been shipped, we will provide you with a tracking number via email."
+    },
+    {
+      question: "What if my product arrives damaged?",
+      answer: "If your product arrives damaged, please contact our customer support immediately for assistance with a return or exchange."
+    },
+    {
+      question: "Do you offer discounts or promotions?",
+      answer: "Yes, we occasionally offer discounts and promotions. Keep an eye on our website and subscribe to our newsletter for updates."
     }
   ];
 
