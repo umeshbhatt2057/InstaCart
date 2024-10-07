@@ -45,6 +45,46 @@ const Faq = () => {
     {
       question: "Do you offer discounts or promotions?",
       answer: "Yes, we occasionally offer discounts and promotions. Keep an eye on our website and subscribe to our newsletter for updates."
+    },
+    {
+      question: "How can I cancel my order?",
+      answer: "You can cancel your order within 24 hours of placing it by contacting our customer support."
+    },
+    {
+      question: "Can I change my shipping address after placing an order?",
+      answer: "Yes, you can change your shipping address before your order has been shipped by contacting our customer support."
+    },
+    {
+      question: "Are all your products new and original?",
+      answer: "Yes, all the products we sell are brand new and sourced from original manufacturers."
+    },
+    {
+      question: "How do I know if a product is in stock?",
+      answer: "The product page will indicate whether the item is in stock. If out of stock, it will be labeled accordingly."
+    },
+    {
+      question: "Can I place an order over the phone?",
+      answer: "Currently, we only accept orders through our website. However, you can contact customer support for assistance."
+    },
+    {
+      question: "What if I receive the wrong item?",
+      answer: "If you receive an incorrect item, contact us immediately and we will arrange for an exchange."
+    },
+    {
+      question: "Do you have a loyalty program?",
+      answer: "We are in the process of developing a loyalty program. Please check back soon for more details."
+    },
+    {
+      question: "Can I leave a product review?",
+      answer: "Yes, we encourage customers to leave reviews on product pages after their purchase."
+    },
+    {
+      question: "How do I subscribe to your newsletter?",
+      answer: "You can subscribe to our newsletter by entering your email address in the subscription box found at the bottom of our website."
+    },
+    {
+      question: "What should I do if I forget my password?",
+      answer: "If you forget your password, click on 'Forgot Password' on the login page and follow the instructions to reset it."
     }
   ];
 
