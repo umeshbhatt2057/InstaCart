@@ -76,7 +76,7 @@ const Faq = () => {
     },
     {
       question: "Can I leave a product review?",
-      answer: "Yes, we encourage customers to leave reviews on product pages after their purchase."
+      answer: "Yes, we encourage customers to leave reviews on product pages after their purchase. But due to some technical problem we are nowadays unable to give this service to our customers. we are extremly sorry for this"
     },
     {
       question: "How do I subscribe to your newsletter?",
