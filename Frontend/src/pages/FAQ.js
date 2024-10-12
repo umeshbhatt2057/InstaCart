@@ -8,83 +8,83 @@ const Faq = () => {
   const faqs = [
     {
       question: "What is Instacart?",
-      answer: "Instacart is an online eCommerce platform that specializes in providing a wide range of electronic devices."
+      answer: "Instacart is an online eCommerce platform that specializes in providing a wide range of electronic devices. We offer an extensive selection of high-quality products from leading brands, allowing customers to find exactly what they need, from smartphones to home electronics, with the convenience of shopping from home."
     },
     {
       question: "How do I create an account?",
-      answer: "To create an account, click on the 'Sign Up' button and fill in your details."
+      answer: "Creating an account is simple and quick. Just click on the 'Sign Up' button at the top of the homepage, and you'll be prompted to fill in your basic details like your name, email address, and password. Once you've completed the form, your account will be created, and you'll have access to personalized features like order history and faster checkout."
     },
     {
       question: "What payment methods do you accept?",
-      answer: "We offer various payment methods, including eSewa, Khalti, IME Pay, FonePay, and Connect IPS. However, due to technical issues, we are currently only accepting cash on delivery."
+      answer: "We offer a variety of convenient payment methods, including popular digital wallets such as eSewa, Khalti, IME Pay, FonePay, and Connect IPS. However, due to temporary technical issues with our payment gateways, we are currently only accepting cash on delivery (COD) as a payment method. We apologize for any inconvenience and are working to resolve the issue."
     },
     {
       question: "What is your return policy?",
-      answer: "We offer a 30-day return policy on most products."
+      answer: "Our return policy allows you to return most products within 30 days of purchase. If you're not fully satisfied with your item, simply contact our customer support to initiate the return process. The product must be in its original packaging and in unused condition to qualify for a refund or exchange."
     },
     {
       question: "How can I contact customer support?",
-      answer: "You can reach us via phone at +9779865941673 or email at instacart143@gmail.com."
+      answer: "You can easily reach our customer support team via phone or email. For immediate assistance, call us at +9779865941673. Alternatively, you can send an email to instacart143@gmail.com, and one of our representatives will get back to you as soon as possible to help with any questions or concerns."
     },
     {
       question: "How long does delivery take?",
-      answer: "Delivery typically takes 3-5 business days depending on your location."
+      answer: "Typically, delivery times range between 3-5 business days depending on your location within Nepal. Orders placed closer to urban centers may arrive faster, while those in more remote areas may take slightly longer. Rest assured, we strive to deliver your products as quickly as possible while ensuring they arrive in perfect condition."
     },
     {
       question: "Do you offer international shipping?",
-      answer: "Currently, we only offer shipping within Nepal. We are working on expanding our services internationally."
+      answer: "At this time, we only offer shipping within Nepal. However, we are working diligently to expand our delivery network to international customers. Stay tuned for future updates, as we plan to bring our products to more regions around the world in the near future."
     },
     {
       question: "Can I track my order?",
-      answer: "Yes, once your order has been shipped, we will provide you with a tracking number via email."
+      answer: "Yes, you can track your order once it has been shipped. We will send you an email with a tracking number and a link to the courier's website, where you can monitor the progress of your delivery and get real-time updates on when your order will arrive."
     },
     {
       question: "What if my product arrives damaged?",
-      answer: "If your product arrives damaged, please contact our customer support immediately for assistance with a return or exchange."
+      answer: "In the rare event that your product arrives damaged, please reach out to our customer support team immediately. We will guide you through the process of returning the damaged item and arranging for either a replacement or a refund, depending on your preference."
     },
     {
       question: "Do you offer discounts or promotions?",
-      answer: "Yes, we occasionally offer discounts and promotions. Keep an eye on our website and subscribe to our newsletter for updates."
+      answer: "Yes, we periodically offer discounts and promotions on select products. To stay informed about our latest deals, be sure to check our website regularly and sign up for our newsletter. By subscribing, you'll receive exclusive updates on special offers and new arrivals directly in your inbox."
     },
     {
       question: "How can I cancel my order?",
-      answer: "You can cancel your order within 24 hours of placing it by contacting our customer support."
+      answer: "You can cancel your order within 24 hours of placing it by contacting our customer support team. After this time frame, cancellations may not be possible if the order has already been processed for shipment, but our support team will guide you through your options."
     },
     {
       question: "Can I change my shipping address after placing an order?",
-      answer: "Yes, you can change your shipping address before your order has been shipped by contacting our customer support."
+      answer: "Yes, you can change your shipping address, but only if your order has not yet been shipped. If you need to update the address, contact our customer support as soon as possible with your new details, and we'll do our best to accommodate your request."
     },
     {
       question: "Are all your products new and original?",
-      answer: "Yes, all the products we sell are brand new and sourced from original manufacturers."
+      answer: "Absolutely! We pride ourselves on offering only brand new, high-quality products that are sourced directly from original manufacturers or authorized distributors. Each item you purchase from Instacart comes with the assurance of authenticity and reliability."
     },
     {
       question: "How do I know if a product is in stock?",
-      answer: "The product page will indicate whether the item is in stock. If out of stock, it will be labeled accordingly."
+      answer: "Our product pages are updated in real-time to reflect current stock levels. If a product is out of stock, it will be clearly marked on the page, and you can choose to receive notifications when it becomes available again."
     },
     {
       question: "Can I place an order over the phone?",
-      answer: "Currently, we only accept orders through our website. However, you can contact customer support for assistance."
+      answer: "Currently, we only accept orders through our website. This ensures that all orders are processed efficiently and securely. If you encounter any issues with placing an order online, our customer support team is always available to assist you."
     },
     {
       question: "What if I receive the wrong item?",
-      answer: "If you receive an incorrect item, contact us immediately and we will arrange for an exchange."
+      answer: "If you receive an incorrect item, please contact our customer support immediately. We will quickly arrange for the wrong product to be returned and ensure that the correct item is sent to you as soon as possible."
     },
     {
       question: "Do you have a loyalty program?",
-      answer: "We are in the process of developing a loyalty program. Please check back soon for more details."
+      answer: "We are in the process of developing an exciting loyalty program for our customers. This will allow you to earn points on your purchases that can be redeemed for discounts or special rewards. Please check back soon for more details on this program."
     },
     {
       question: "Can I leave a product review?",
-      answer: "Yes, we encourage customers to leave reviews on product pages after their purchase. But due to some technical problem we are nowadays unable to give this service to our customers. we are extremly sorry for this"
+      answer: "Yes, we encourage all of our customers to leave reviews for the products they purchase, as it helps other shoppers make informed decisions. However, due to some temporary technical issues, we are currently unable to offer this feature. We are working hard to restore it as soon as possible and apologize for the inconvenience."
     },
     {
       question: "How do I subscribe to your newsletter?",
-      answer: "You can subscribe to our newsletter by entering your email address in the subscription box found at the bottom of our website."
+      answer: "Subscribing to our newsletter is easy! Simply scroll down to the bottom of our website and enter your email address in the subscription box. Once subscribed, you'll receive regular updates on new products, special promotions, and other important news from Instacart."
     },
     {
       question: "What should I do if I forget my password?",
-      answer: "If you forget your password, click on 'Forgot Password' on the login page and follow the instructions to reset it."
+      answer: "If you forget your password, don't worry! Just click on the 'Forgot Password' link on the login page and follow the instructions. You'll be able to reset your password through an email link, allowing you to regain access to your account quickly and securely."
     }
   ];
 
