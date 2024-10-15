@@ -1,4 +1,4 @@
-# <b>InstaCart-All Electronics HOme </b>
+# <b>InstaCart-All Electronics Home </b>
 ![Screenshot 2024-10-01 002143](https://github.com/user-attachments/assets/c83633c1-67a4-41ca-9218-cf67db66b39b)
 ![Screenshot 2024-10-01 002242](https://github.com/user-attachments/assets/14fdbcf1-b79b-45cc-8429-93e219a39bd2)
 ![Screenshot 2024-10-01 002313](https://github.com/user-attachments/assets/abfd92cf-e3c0-4d67-96c3-eda38d619b89)
